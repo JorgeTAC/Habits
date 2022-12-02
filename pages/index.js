@@ -91,8 +91,8 @@ export default function Home() {
           </section>
         </main>
         <style jsx>{`
-          .days:nth-child(1) {
-            grid-column-start: ${month.firstDay};
+          li:nth-child(8) {
+            grid-column-start: ${month.firstDay + 1};
           }
 
           .daysName {
