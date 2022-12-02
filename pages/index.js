@@ -134,6 +134,36 @@ export default function Home() {
           .checked {
             background-color: #eaeaea;
           }
+
+          .checked::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eaeaea;
+            z-index: -1;
+          }
+
+          .checked::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eaeaea;
+            z-index: -1;
+          }
+
+          .checked::before {
+            transform: rotate(45deg);
+          }
+
+          .checked::after {
+            transform: rotate(-45deg);
+          }
         `}</style>
       </div>
     </>
