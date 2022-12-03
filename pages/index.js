@@ -84,7 +84,7 @@ export default function Home() {
                   className={item.checked ? 'days checked' : 'days'}
                   onClick={() => dayClickEvent(idx)}
                 >
-                  {item.day}
+                  <span>{item.day}</span>
                 </li>
               ))}
             </ol>
@@ -96,8 +96,15 @@ export default function Home() {
           }
 
           .daysName {
-            color: #ccc;
+            color: #000;
             cursor: default;
+            font-weight: 600;
+          }
+
+          span {
+            font-weight: 600;
+            z-index: 3;
+            display: block;
           }
 
           section {
@@ -124,37 +131,13 @@ export default function Home() {
             color: #333;
             user-select: none;
             cursor: pointer;
-          }
-
-          .days:hover {
-            background-color: #eaeaea;
+            border: 0;
           }
 
           /* cross in container */
           .checked {
-            background-color: #eaeaea;
-          }
-
-          .checked::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #eaeaea;
-            z-index: -1;
-          }
-
-          .checked::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #eaeaea;
-            z-index: -1;
+            background-color: #fe6f61;
+            position: relative;
           }
 
           .checked::before {
@@ -163,6 +146,18 @@ export default function Home() {
 
           .checked::after {
             transform: rotate(-45deg);
+          }
+
+          .checked::before,
+          .checked::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: #eaeaea;
+            z-index: 0;
           }
         `}</style>
       </div>
